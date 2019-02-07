@@ -1,0 +1,23 @@
+{
+  "name": "farmer-market",
+  "version": "1.0.0",
+  "description": "Farmer market web app project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0cnLaroche/farmer-market.git"
+  },
+  "author": "Samuel Laroche",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/0cnLaroche/farmer-market/issues"
+  },
+  "homepage": "https://github.com/0cnLaroche/farmer-market#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
