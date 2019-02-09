@@ -1,10 +1,10 @@
 var mysql = require('mysql');
 var fs = require('fs');
 var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'iitbchart',
-  password: 'P@$$w0rd',
-  database: 'costing'
+  host: '35.183.115.194',
+  user: 'farmer-market.admin',
+  password: 'Bmw325xi()',
+  database: 'farmer'
 });
 
 connection.connect(function(err){
@@ -15,12 +15,13 @@ connection.connect(function(err){
   console.log('Connected to database as Id ' + connection.threadId);
 });
 
-connection.query('SELECT ID, Name FROM ProjectDefinition ORDER BY Name;', function(err,results,fields){
+connection.query('SELECT 1;', function(err,results,fields){
+
   // Do something with results
 })
 
 // Exemple pour lire des requêtes en fichiers .sql
-var getdata = function(id, options, callback){
+var getData = function(id, options, callback){
 
   var query = options.query.name;
   var param = options.query.param;
@@ -40,3 +41,5 @@ var getdata = function(id, options, callback){
       }
     })
 }
+
+module.exports = getData;

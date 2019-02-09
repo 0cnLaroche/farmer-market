@@ -5,6 +5,7 @@ var querystring = require('querystring');
 var fs = require('fs');
 
 var route = require('./server/route');
+var db = require('./server/dataservice')
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
