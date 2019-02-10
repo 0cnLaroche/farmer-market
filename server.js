@@ -4,8 +4,10 @@ var url = require('url');
 var querystring = require('querystring');
 var fs = require('fs');
 
-var route = require('./server/route');
-var db = require('./server/dataservice')
+//Local modules
+var storage = require('./server/storage');
+var api = require('./server/api');
+var rm = require('./server/resourcemanager');
 
 var app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,7 +16,7 @@ app.use(bodyParser.json());
 const $PORT = process.env.port || 8080;
 
 //To use static assets directories
-app.use(express.static('dist'));
+//app.use(express.static('dist'));
 
 app.get('/', function(req,res){
 
@@ -23,7 +25,9 @@ app.get('/', function(req,res){
     })
 })
 
-app.use('/route', route);
+// Set router routes
+app.use('/storage', storage);
+app.use('/api', api);
 
 app.listen($PORT, function(){
     console.log('Server listening on port ' + $PORT);

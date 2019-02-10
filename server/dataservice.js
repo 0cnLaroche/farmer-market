@@ -1,5 +1,8 @@
 var mysql = require('mysql');
 var fs = require('fs');
+
+var db = exports = module.exports = {};
+
 var connection = mysql.createConnection({
   host: '35.183.115.194',
   user: 'farmer-market.admin',
@@ -7,7 +10,9 @@ var connection = mysql.createConnection({
   database: 'farmer'
 });
 
-connection.connect(function(err){
+db.connection = connection;
+
+db.connection.connect(function(err){
   if (err) {
     console.error('error connecting: ' + err.stack);
     return;
@@ -15,13 +20,21 @@ connection.connect(function(err){
   console.log('Connected to database as Id ' + connection.threadId);
 });
 
-connection.query('SELECT 1;', function(err,results,fields){
-
-  // Do something with results
-})
+/*db.query = function(sql) {
+  var json;
+  connection.query(sql, function(err, results, fields) {
+    if (err) {
+      console.error('Query error: ' + err.stack);
+      return;
+    }
+    db.query.json = results;
+  })
+  console.log(db.query.json);
+  return db.query.json;
+}*/
 
 // Exemple pour lire des requêtes en fichiers .sql
-var getData = function(id, options, callback){
+db.getData = function(id, options, callback){
 
   var query = options.query.name;
   var param = options.query.param;
@@ -41,5 +54,3 @@ var getData = function(id, options, callback){
       }
     })
 }
-
-module.exports = getData;
