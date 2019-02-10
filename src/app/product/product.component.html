@@ -1,8 +1,15 @@
 <div class="container">
-  <p>
-    {{product.name}}
-  </p>
-  <p>
-    {{product.category}}
-  </p>
+  <figure class="figure">
+  <img src='http://localhost:8080/storage?id={{product.images[0]}}' class="img-thumbnail product" alt="...">
+  <!--figcaption class="figure-caption">A caption for the above image.</figcaption-->
+</figure>
+<p>
+  {{product.name}}
+</p>
+<p>
+  {{product.category}}
+</p>
+<p>
+  {{product.price}} $
+</p>
 </div>

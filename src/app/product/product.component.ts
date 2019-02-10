@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Product } from '../product';
+import { ProductService } from '../product.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -8,13 +10,9 @@ import { Product } from '../product';
 })
 export class ProductComponent implements OnInit {
 
-  product: Product = {
-    id: 123,
-    name: 'Steak haché',
-    category: 'viande'
-  }
+  @Input() product: Product;
 
-  constructor(/*product: Product*/) {
+  constructor() {
 
   }
 
