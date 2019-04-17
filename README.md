@@ -2,6 +2,8 @@
 
 Ce répertoire comprend le code source pour l'application web et le serveur.
 
+[Accéder au site ici!](http://mimarket.ga/)
+
 ## Instructions
 
 1. Installer NodeJS
