@@ -1,15 +1,28 @@
-<div class="container">
-  <figure class="figure">
-  <img src='http://localhost:8080/storage?id={{product.images[0]}}' class="img-thumbnail product" alt="...">
-  <!--figcaption class="figure-caption">A caption for the above image.</figcaption-->
-</figure>
-<p>
-  {{product.name}}
-</p>
-<p>
-  {{product.category}}
-</p>
-<p>
-  {{product.price}} $
-</p>
+<div class="column">
+  <div class="card">
+    <!--image source need to be changed to ./storage-->
+    <figure class="image is-4by3">
+      <img src='http://localhost:8080/storage?id={{product.images[0]}}' class="product" alt="...">
+    </figure>
+
+    <div class="card-content">
+      <p class="title is-4">{{product.name}}</p>
+      <!--p class="subtitle is-6"></p-->
+      <div class="content">
+        <p class="card-text">
+          <a class="link" routerLink="/producer/:{{product.farmId}}">{{product.farmName}}</a><br>
+          {{product.rating}}/5<br>{{product.price}} $</p>
+      </div>
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary" (click)="addToBasket(units.valueAsNumber)">Ajouter au panier</button>
+        </div>
+        <div class="control">
+          <input #units class="input is-primary qty" type="number" placeholder="units" value=1 min="1" max="100">
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>

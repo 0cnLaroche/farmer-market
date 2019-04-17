@@ -29,7 +29,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [/*"tsc --project /src/app/models"*/]
           },
           "configurations": {
             "production": {

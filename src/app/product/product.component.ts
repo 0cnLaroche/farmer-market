@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { Product } from '../product';
-import { ProductService } from '../product.service';
+import { Product } from '../models/product';
+import { BasketService } from '../services/basket.service';
+import { ProductService } from '../services/product.service';
 import {Observable} from 'rxjs';
 
 @Component({
@@ -12,11 +13,14 @@ export class ProductComponent implements OnInit {
 
   @Input() product: Product;
 
-  constructor() {
+  constructor(private basketService: BasketService) {
 
   }
 
   ngOnInit() {
+  }
+  addToBasket(units: number): void {
+    this.basketService.add(this.product, units);
   }
 
 }

@@ -1,5 +1,18 @@
 # FarmerMarketApp
 
+Ce répertoire comprend le code source pour l'application web et le serveur.
+
+## Instructions
+
+1. Installer NodeJS
+1. Ouvrir un invite de commande dans le répertoire
+1. ```npm install``` pour installer les dépendances
+1. ```ng serve``` pour lancer le serveur de dévelopement
+
+## NodeJS
+
+## Angular
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 
 ## Development server

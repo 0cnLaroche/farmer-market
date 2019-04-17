@@ -4,7 +4,7 @@ var rm = require('./resourcemanager');
 var router = express.Router();
 
 router.get('/', function (req, res){
-  console.log('request for storage received');
+  // console.log('request for storage received');
   var id = req.query.id;
   //var report = req.query.report;
 

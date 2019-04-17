@@ -1,0 +1,59 @@
+<section class="section">
+  <div class="container">
+    <div class="box">
+      <div *ngIf="items.size == 0">
+        <p><strong>Basket is empty...</strong></p>
+      </div>
+      <ul>
+        <li *ngFor="let item of items">
+          <article class="media">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <img src='http://localhost:8080/storage?id={{item.product.images[0]}}'>
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <div class="columns">
+                  <div class="column is-narrow">
+                    {{item.units}}
+                  </div>
+                  <div class="column">
+                    {{item.product.name}}
+                  </div>
+                  <div class="column is-one-quarter has-text-right">
+                    {{item.getPriceToString()}}
+                  </div>
+                </div>
+              </div>
+              <nav class="level is-mobile">
+                <div class="level-left">
+                </div>
+              </nav>
+            </div>
+            <div class="media-right">
+              <button (click)="removeItem(item)" class="delete"></button>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class="box has-background-primary level">
+      <div class="level-right">
+        <div class="level-item has-text-light">
+          Total
+        </div>
+        <div class="level-item">
+          <div class="field">
+            <div class="input">{{ getGrossTotalToString() }}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
