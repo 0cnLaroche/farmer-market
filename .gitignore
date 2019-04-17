@@ -6,7 +6,7 @@
 /out-tsc
 
 # file storage
-/storage/*
+# /storage/*
 
 # dependencies
 /node_modules
