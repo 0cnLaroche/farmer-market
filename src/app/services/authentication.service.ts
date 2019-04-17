@@ -8,7 +8,7 @@ import {Observable} from 'rxjs';
 
 export class AuthenticationService {
   currentUser: User;
-  readonly HOST = 'http://localhost:8080';
+  readonly HOST = '';//'http://localhost:8080';
 
   constructor(private http: HttpClient) { }
 

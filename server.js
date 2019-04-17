@@ -28,11 +28,12 @@ app.get('/', function(req,res){
     fs.readFile('dist/index.html', 'utf8', function(err,content){
         res.send(content);
     })
-})
+});
 
 // Set router routes
 app.use('/storage', storage);
 app.use('/api', api);
+app.use(express.static('dist'));
 
 app.listen($PORT, function(){
     console.log('Server listening on port ' + $PORT);

@@ -17,7 +17,7 @@ export class ProducerComponent implements OnInit {
   ngOnInit() {
     console.log("allo producer");
     // this.param = this.route.snapshot.paramMap.get('farm');
-    this.http.get<Farm>(`http://localhost:8080/api/farm?id=${1}`)
+    this.http.get<Farm>(`/api/farm?id=${1}`)
       .subscribe((data: Farm) => {
         this.farm = data;
         console.log(this.farm);
